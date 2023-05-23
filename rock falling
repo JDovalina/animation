@@ -1,0 +1,35 @@
+import simplegui
+x=205
+y=80
+def draw_handler(canvas):
+    # your code goes here
+    global x
+    global y
+    x = x + 1
+    y= y + 2
+    canvas.draw_polygon([(1,200),(200,200),(200,600),(1,600)],2,"#5e635f","#5e635f")
+    canvas.draw_polygon([(1,100),(200,100),(200,200),(1,200)],1,"#3e7849","#3e7849")
+    canvas.draw_polygon([(1,150),(200,150),(200,200),(1,200)],1,"#3b1e1f","#3b1e1f")
+    canvas.draw_polygon([(400,300),(600,300),(600,600),(400,600)],2,"#5e635f","#5e635f")
+    canvas.draw_polygon([(400,400),(600,400),(600,300),(400,300)],2,"#3b1e1f","#3b1e1f")
+    canvas.draw_polygon([(400,350),(600,350),(600,300),(400,300)],2,"#3e7849","#3e7849")
+    canvas.draw_line((200,100,),(200,600),5,"black")
+    canvas.draw_line((1,100),(200,100),5,"black")
+    canvas.draw_line((400,300),(600,300),5,"black")
+    canvas.draw_line((400,600),(400,400),5,"black")
+    canvas.draw_line((400,600),(400,300),5,"black")
+    canvas.draw_circle((475,80),40,5,"yellow","yellow")
+    canvas.draw_circle((210,y),15,5,"#8e989e","#8e989e")
+    for i in range (200,600,3):
+        i=i-2
+        canvas.draw_circle((430,100),20,5,"white","white")
+        canvas.draw_circle((490,100),20,5,"white","white")
+    for i in range (200,600,3):
+        i=i-2
+        canvas.draw_circle((450,100),20,5,"white","white")    
+        canvas.draw_circle((470,100),20,5,"white","white")
+
+frame = simplegui.create_frame('rock falling', 600, 600)
+frame.set_canvas_background("#5cb3ed")
+frame.set_draw_handler(draw_handler)
+frame.start()
